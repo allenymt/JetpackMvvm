@@ -23,7 +23,6 @@ android {
         multiDexEnabled true
     }
     buildFeatures {
-        //这2个为非必选，想用哪个就保留那个 用的话一定要加上项目中的 ViewBinding & DataBinding 混淆规则
         dataBinding = true
         viewBinding = true
     }

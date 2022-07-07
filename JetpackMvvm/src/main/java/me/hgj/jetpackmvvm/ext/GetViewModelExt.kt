@@ -10,6 +10,12 @@ import java.lang.reflect.ParameterizedType
 
 /**
  * 获取当前类绑定的泛型ViewModel-clazz
+ * todo  疑问，这个怎么做到的？
+ * 应该是通过拿到这个类的泛型，因为基类ac里规定了第一个参数是vm，所以泛型里第一个参数就是实际的vm类型
+ * 因为调用这个方法的基类，只有一个泛型参数，而且类型限死了是viewModel
+ *
+ * 调用步骤这里还是要看看，genericSuperclass还是什么？ javaClass比较好理解，就是Class
+ * actualTypeArguments 又是个啥？
  */
 @Suppress("UNCHECKED_CAST")
 fun <VM> getVmClazz(obj: Any): VM {

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ASMIdeaPluginConfiguration">
+    <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
@@ -10,6 +14,7 @@
         <entry key="..\:/mySelf/JetpackMvvm/app/src/main/res/layout/fragment_pager.xml" value="0.1" />
         <entry key="..\:/mySelf/JetpackMvvm/app/src/main/res/layout/fragment_test.xml" value="0.1" />
         <entry key="..\:/mySelf/JetpackMvvm/app/src/main/res/layout/fragment_viewpager.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.2418478260869565" />
       </map>
     </option>
   </component>

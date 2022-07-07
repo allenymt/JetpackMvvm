@@ -10,6 +10,9 @@ import me.hgj.jetpackmvvm.callback.livedata.event.EventLiveData
  */
 open class BaseViewModel : ViewModel() {
 
+    /**
+     * 这里的委托又起到了什么作用呢？
+     */
     val loadingChange: UiLoadingChange by lazy { UiLoadingChange() }
 
     /**
