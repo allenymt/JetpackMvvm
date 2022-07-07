@@ -16,9 +16,18 @@ import java.lang.reflect.ParameterizedType
  *
  * 调用步骤这里还是要看看，genericSuperclass还是什么？ javaClass比较好理解，就是Class
  * actualTypeArguments 又是个啥？
+ *
+ * https://blog.csdn.net/jingyangV587/article/details/81037054 参考这篇文章
+ * class.getSuperclass() 和 class.getGenericSuperclass(); 有什么区别？
+ * getSuperclass返回的超类，getGenericSuperclass返回的超类的类型，带泛型类型，既然带了泛型类型，那就可以拿到具体的泛型
+ * (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] 返回的是个数组，下标可以写死，这里是拿ViewModel，预先定义好的是在第一个位置
  */
 @Suppress("UNCHECKED_CAST")
 fun <VM> getVmClazz(obj: Any): VM {
+    android.util.Log.e("getVmClazz", "obj is $obj")
+    android.util.Log.e("getVmClazz", "obj javaClass is ${obj.javaClass}")
+    android.util.Log.e("getVmClazz", "obj genericSuperclass is ${obj.javaClass.genericSuperclass}")
+    android.util.Log.e("getVmClazz", "obj vm is ${(obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0]}")
     return (obj.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as VM
 }
 

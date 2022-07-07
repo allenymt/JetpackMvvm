@@ -21,6 +21,7 @@ abstract class BaseVmDbActivity<VM : BaseViewModel, DB : ViewDataBinding> : Base
      * 创建DataBinding
      */
     override fun initDataBind(): View? {
+        // 注入dataBinding \ ViewBinding
         mDatabind = inflateBindingWithGeneric(layoutInflater)
         return mDatabind.root
     }

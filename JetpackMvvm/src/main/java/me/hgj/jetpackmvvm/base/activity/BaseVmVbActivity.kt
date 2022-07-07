@@ -19,7 +19,7 @@ abstract class BaseVmVbActivity<VM : BaseViewModel, VB : ViewBinding> : BaseVmAc
     lateinit var mViewBind: VB
 
     /**
-     * 创建DataBinding
+     * 创建viewBinding
      */
     override fun initDataBind(): View? {
         // 绑定viewBinding
