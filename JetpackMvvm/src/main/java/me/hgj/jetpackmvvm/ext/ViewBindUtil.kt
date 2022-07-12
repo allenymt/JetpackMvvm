@@ -15,12 +15,20 @@ import java.lang.reflect.ParameterizedType
  * 描述　:
  */
 
+/**
+ * Activity的扩展函数，
+ * @receiver AppCompatActivity
+ * @param layoutInflater LayoutInflater
+ * @return VB
+ */
 @JvmName("inflateWithGeneric")
 fun <VB : ViewBinding> AppCompatActivity.inflateBindingWithGeneric(layoutInflater: LayoutInflater): VB =
+    // 这里的this代表的就是 实际的activity类
     withGenericBindingClass<VB>(this) { clazz ->
         //找到ViewBinding后，通过反射获得注入
         clazz.getMethod("inflate", LayoutInflater::class.java).invoke(null, layoutInflater) as VB
     }.also { binding ->
+        // 最后返回的就是ViewBinding,ViewBinding里的root就是我们的布局文件
         if (binding is ViewDataBinding) {
             binding.lifecycleOwner = this
         }

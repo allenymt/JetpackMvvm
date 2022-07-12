@@ -30,6 +30,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // 花里胡哨的写法
         initDataBind().notNull({
             setContentView(it)
         }, {

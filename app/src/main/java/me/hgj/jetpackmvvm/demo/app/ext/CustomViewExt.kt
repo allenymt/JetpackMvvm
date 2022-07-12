@@ -323,6 +323,7 @@ fun ViewPager2.init(
     return this
 }
 
+// 滥用扩展函数。
 fun ViewPager2.initMain(fragment: Fragment): ViewPager2 {
     //是否可滑动
     this.isUserInputEnabled = false

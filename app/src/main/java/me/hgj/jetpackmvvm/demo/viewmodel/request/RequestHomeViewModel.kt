@@ -67,8 +67,13 @@ class RequestHomeViewModel : BaseViewModel() {
 
     /**
      * 获取轮播图数据
+     *
      */
     fun getBannerData() {
-        request({ apiService.getBanner() }, bannerData)
+        request(
+            {
+                android.util.Log.e("yl_test", "thread: ${Thread.currentThread().name}")
+                apiService.getBanner() },
+            bannerData)
     }
 }

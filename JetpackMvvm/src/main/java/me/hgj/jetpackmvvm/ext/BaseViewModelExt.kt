@@ -90,6 +90,8 @@ fun <T> BaseVmFragment<*>.parseState(
  * @param resultState 请求回调的ResultState数据
  * @param isShowDialog 是否显示加载框
  * @param loadingMessage 加载框提示内容
+ *
+ * 这里的请求发起可以主线程，同时也不需要维护返回体的解码，因为retrofit内部都做过了
  */
 fun <T> BaseViewModel.request(
     block: suspend () -> BaseResponse<T>,
